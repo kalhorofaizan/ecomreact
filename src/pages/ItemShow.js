@@ -1,23 +1,24 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View,ImageBackground,Dimensions,Image,ScrollView ,TouchableOpacity} from 'react-native'
+import { Text, StyleSheet, View,ImageBackground,Dimensions,Image,ScrollView ,TouchableOpacity,Button} from 'react-native'
 import item  from '../../assets/drawable-mdpi/item.png'
 import Review from "../components/Review";
+import arrowleft from '../../assets/drawable-mdpi/arrowleft.png'
 export default class ItemShow extends Component {
     constructor(props){
         super(props);
             this.state={
                 showText:3
-            }
+            };
     }
   render() {
     return (
-        <View>
+        <View  style={{flex:1}}>
             <Image  source={item} style={{width:Dimensions.get('window').width,height:Dimensions.get('window').height*0.65,resizeMode:'stretch',position:'absolute'}}  />
-            <TouchableOpacity  >
-
+            <TouchableOpacity onPress={()=>{this.props.navigation.goBack()}} style={{width:40,height:40,borderRadius:50,backgroundColor:'rgba(247,246,255,0.18)',marginTop:10,marginLeft:10,alignItems:'center',justifyContent:'center'}}  >
+                <Image  source={arrowleft} style={{width:30,height:30}}  />
             </TouchableOpacity>
-            <ScrollView  >
-                <View style={{marginTop:Dimensions.get('window').height*0.65}}/>
+            <ScrollView showsVerticalScrollIndicator={false}  >
+                <View style={{marginTop:Dimensions.get('window').height*0.58}}/>
                 <View style={{backgroundColor:"white"}} >
                     <View  >
                         <Text   style={{fontSize:20,marginLeft:10,fontWeight: "bold",color:'#000000',marginTop:5,}}   >Nike Dri-Fit Long Sleeve</Text>
@@ -44,6 +45,15 @@ export default class ItemShow extends Component {
                 </View>
 
             </ScrollView>
+            <View  style={{height:60,width:Dimensions.get('window').width,flexDirection:'row',elevation:1}}>
+                <View  style={{marginLeft:20,marginTop:10}}>
+                    <Text>Price</Text>
+                    <Text style={{fontSize:15,color:'#00C569'}} >RS 1500</Text>
+                </View>
+                <TouchableOpacity style={{marginLeft:"auto",marginRight:15,height:40,marginTop:10,width:100,borderRadius:5,backgroundColor:'#00C569',alignItems:'center',justifyContent:'center'}} onPress={()=>{}}>
+                    <Text style={{fontSize:15,color:'white'}}>Add</Text>
+                </TouchableOpacity>
+            </View>
         </View>
 
     )
