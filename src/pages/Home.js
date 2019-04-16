@@ -11,9 +11,6 @@ export default class Home extends Component {
         super(props);
 
     }
-    showitems(){
-      this.props.navigation.navigate('Showitem');
-    };
 
   render() {
     return (
@@ -23,7 +20,7 @@ export default class Home extends Component {
               <Categories/>
               <BestSells >
                   <ListBox>
-                      <ListItems showitem={this.showitems}/>
+                      <ListItems navigation={this.props.navigation}/>
                       <ListItems/>
                   </ListBox>
                   <ListBox>

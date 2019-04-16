@@ -9,7 +9,7 @@ export default class ListItems extends Component {
     }
   render() {
     return (
-      <TouchableOpacity   >
+      <TouchableOpacity onPress={()=>{this.props.navigation.navigate('Showitem')}}   >
           <Image source={image} style={{width:Dimensions.get('window').width*0.43}}  height={Dimensions.get('window').height*0.35} />
           <Text style={{fontWeight:'bold'}}>Dri-FIT  Long Sleeve</Text>
           <Text style={{fontSize:12}} >Nike</Text>
