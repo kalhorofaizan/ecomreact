@@ -14,7 +14,7 @@ export default class BestSells extends Component {
       <View>
           <View style={{flexDirection:'row',width:Dimensions.get('window').width,textColor: "black"}}  >
               <Text style={{fontSize:18,fontWeight:'bold',marginLeft:10,marginTop:5 }} >Bast Selling</Text>
-              <TouchableOpacity style={{alignSelf:'flex-end',textColor: "black",marginLeft:'auto',marginRight:10}} >
+              <TouchableOpacity onPress={()=>{this.props.navigation.navigate('ItemList')}} style={{alignSelf:'flex-end',textColor: "black",marginLeft:'auto',marginRight:10}} >
                   <Text>See all</Text>
               </TouchableOpacity>
           </View>

@@ -17,6 +17,7 @@ import Cart from "./src/pages/Cart";
 import Setting from "./src/pages/Setting";
 import ItemShow from "./src/pages/ItemShow";
 import WriteReview from'./src/pages/WriteReview'
+import ItemList from "./src/pages/ItemList";
 
 
 
@@ -30,6 +31,9 @@ const HomeStackNavigater=createStackNavigator({
     Writereview:{
     screen:WriteReview
     },
+  ItemList:{
+    screen:ItemList
+  }
 },{
   headerMode:'none',
   navigationOptions:{
@@ -44,6 +48,8 @@ HomeStackNavigater.navigationOptions=({navigation})=>{
       if (route.routeName === "Showitem") {
         tabBarVisible = false;
       } else if (route.routeName === "Writereview"){
+        tabBarVisible = false;
+      }else if (route.routeName === "ItemList"){
         tabBarVisible = false;
       }
       else {

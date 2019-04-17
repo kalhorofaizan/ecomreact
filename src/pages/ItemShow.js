@@ -48,7 +48,7 @@ export default class ItemShow extends Component {
                 </View>
 
             </ScrollView>
-            <View  style={{height:60,width:Dimensions.get('window').width,flexDirection:'row',elevation:1}}>
+            <View  style={{height:60,width:Dimensions.get('window').width,flexDirection:'row',elevation:1,backgroundColor:'white'}}>
                 <View  style={{marginLeft:20,marginTop:10}}>
                     <Text>Price</Text>
                     <Text style={{fontSize:15,color:'#00C569'}} >RS 1500</Text>

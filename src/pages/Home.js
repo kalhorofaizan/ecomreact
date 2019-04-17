@@ -17,19 +17,19 @@ export default class Home extends Component {
       <View  style={{backgroundColor:'#FFFFFF',flex:1}}>
         <Searchbar  />
           <ScrollView>
-              <Categories/>
-              <BestSells >
-                  <ListBox>
+              <Categories  navigation={this.props.navigation}/>
+              <BestSells navigation={this.props.navigation} >
+                  <ListBox >
                       <ListItems navigation={this.props.navigation}/>
-                      <ListItems/>
+                      <ListItems  navigation={this.props.navigation}/>
                   </ListBox>
                   <ListBox>
-                      <ListItems/>
-                      <ListItems/>
+                      <ListItems  navigation={this.props.navigation}/>
+                      <ListItems  navigation={this.props.navigation}/>
                   </ListBox>
                   <ListBox>
-                      <ListItems/>
-                      <ListItems/>
+                      <ListItems  navigation={this.props.navigation}/>
+                      <ListItems  navigation={this.props.navigation}/>
                   </ListBox>
               </BestSells>
           </ScrollView>

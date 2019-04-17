@@ -5,7 +5,7 @@ import {Text, StyleSheet, View, Image,TouchableOpacity,Dimensions} from 'react-n
 export default  CatItem =(props)=>{
     return (
         <View  style={styles.ItemLayout} >
-            <TouchableOpacity style={styles.ImageLayout}>
+            <TouchableOpacity style={styles.ImageLayout} onPress={()=>{props.navigation.navigate('ItemList')}} >
                 <Image source={props.image}   style={{width:props.width,height:props.height}}/>
             </TouchableOpacity>
             <Text style={{fontSize:Dimensions.get('window').width*0.03}}>{props.name}</Text>
