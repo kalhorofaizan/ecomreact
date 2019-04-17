@@ -71,7 +71,7 @@ const TabNavigater = createBottomTabNavigator({
     screen:Cart,
     navigationOptions:{
       tabBarIcon:({tintColor})=>(
-          <Image source={cart} style={{width:Dimensions.get('window').width*0.055 ,height:Dimensions.get('window').height*0.036}}  />
+          <Image source={cart} style={{width:Dimensions.get('window').width*0.06 ,height:Dimensions.get('window').height*0.039}}  />
       )
     }
   },
@@ -85,18 +85,12 @@ const TabNavigater = createBottomTabNavigator({
   }
 },{
   tabBarOptions:{
-    showLabel:false
+    showLabel:false,
+      style:{
+        width:Dimensions.get('window').width,
+          height:Dimensions.get('window').height*0.08
+      }
   }
 });
 
 export default createAppContainer(TabNavigater);
-//
-// export default class App extends Component<Props> {
-//   render() {
-//     return (
-//       <View >
-//       </View>
-//     );
-//   }
-// }
-

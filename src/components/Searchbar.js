@@ -23,7 +23,7 @@ export default class Searchbar extends Component {
 
 const styles = StyleSheet.create({
     searchSection: {
-        height:36,
+        height:Dimensions.get('window').height*0.070,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         marginLeft:5
     },
     input: {
-        height:36,
+        height:Dimensions.get('window').height*0.070,
         paddingTop: 10,
         paddingBottom: 10,
         paddingLeft: 0,

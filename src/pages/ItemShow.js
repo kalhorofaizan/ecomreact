@@ -17,8 +17,9 @@ export default class ItemShow extends Component {
             <TouchableOpacity onPress={()=>{this.props.navigation.goBack()}} style={{width:40,height:40,borderRadius:50,backgroundColor:'rgba(247,246,255,0.18)',marginTop:10,marginLeft:10,alignItems:'center',justifyContent:'center'}}  >
                 <Image  source={arrowleft} style={{width:30,height:30}}  />
             </TouchableOpacity>
+            <View style={{height:Dimensions.get('window').height*0.2}} />
             <ScrollView showsVerticalScrollIndicator={false}  >
-                <View style={{marginTop:Dimensions.get('window').height*0.58}}/>
+                <View style={{marginTop:Dimensions.get('window').height*0.31}}/>
                 <View style={{backgroundColor:"white"}} >
                     <View  >
                         <Text   style={{fontSize:20,marginLeft:10,fontWeight: "bold",color:'#000000',marginTop:5,}}   >Nike Dri-Fit Long Sleeve</Text>
@@ -42,6 +43,8 @@ export default class ItemShow extends Component {
             </TouchableOpacity>
                 <Review/>
                 <Review/>
+                    <Review/>
+                    <Review/>
                 </View>
 
             </ScrollView>

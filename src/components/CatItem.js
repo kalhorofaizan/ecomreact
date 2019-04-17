@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import {Text, StyleSheet, View, Image,TouchableOpacity} from 'react-native'
+import {Text, StyleSheet, View, Image,TouchableOpacity,Dimensions} from 'react-native'
 
 
 export default  CatItem =(props)=>{
     return (
         <View  style={styles.ItemLayout} >
             <TouchableOpacity style={styles.ImageLayout}>
-                <Image source={props.image}   style={[styles.Image,{width:props.width,height:props.height}]}/>
+                <Image source={props.image}   style={{width:props.width,height:props.height}}/>
             </TouchableOpacity>
-            <Text>{props.name}</Text>
+            <Text style={{fontSize:Dimensions.get('window').width*0.03}}>{props.name}</Text>
         </View>
     )
 }
@@ -20,12 +20,12 @@ const styles = StyleSheet.create({
         margin:5,
         alignItems:'center',
         justifyContent:'center',
-        width:70
+        width:Dimensions.get('window').width*0.17
     },
     ImageLayout:{
         borderRadius:50,
-        width:60,
-        height:60,
+        width:Dimensions.get('window').width*0.151,
+        height:Dimensions.get('window').width*0.151,
         elevation:1,
         margin:5,
         alignItems:'center',
