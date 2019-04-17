@@ -14,9 +14,9 @@ export default class Categories extends Component {
 
   render() {
     return (
-      <View style={{width:Dimensions.get('window').width}}   >
+      <View  >
         <Text style={{fontSize:18,fontWeight:'bold',marginLeft:10,marginTop:5}} > Categories </Text>
-          <ScrollView  horizontal={true} showsHorizontalScrollIndicator={false} style={{width:Dimensions.get('window').width}} >
+          <ScrollView  horizontal={true} showsHorizontalScrollIndicator={false}  >
               <CatItem  navigation={this.props.navigation} image={man} name={"Man"} width={36} height={17}  />
               <CatItem  navigation={this.props.navigation} image={woman} name={"Woman"} width={30} height={24} />
               <CatItem navigation={this.props.navigation}  image={devices} name={"Devices"} width={19} height={26}  />

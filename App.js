@@ -18,7 +18,25 @@ import Setting from "./src/pages/Setting";
 import ItemShow from "./src/pages/ItemShow";
 import WriteReview from'./src/pages/WriteReview'
 import ItemList from "./src/pages/ItemList";
+import Login from "./src/pages/Login";
+import Signup from "./src/pages/Signup";
 
+
+
+// const LoginStackNavigatier=createStackNavigator({
+//   Login:{
+//     screen:Login
+//   },
+//   Signup:{
+//     screen:Signup
+//   }
+// },{
+//   headerMode:'none',
+//   navigationOptions:{
+//     header:false
+//   }});
+//
+//  export default createAppContainer(LoginStackNavigatier);
 
 
 const HomeStackNavigater=createStackNavigator({
@@ -93,7 +111,6 @@ const TabNavigater = createBottomTabNavigator({
   tabBarOptions:{
     showLabel:false,
       style:{
-        width:Dimensions.get('window').width,
           height:Dimensions.get('window').height*0.08
       }
   }

@@ -20,12 +20,12 @@ const styles = StyleSheet.create({
         margin:5,
         alignItems:'center',
         justifyContent:'center',
-        width:Dimensions.get('window').width*0.17
+        width:Dimensions.get('window').width*0.22
     },
     ImageLayout:{
         borderRadius:50,
-        width:Dimensions.get('window').width*0.151,
-        height:Dimensions.get('window').width*0.151,
+        width:Dimensions.get('window').width*0.15,
+        height:Dimensions.get('window').width*0.15,
         elevation:1,
         margin:5,
         alignItems:'center',

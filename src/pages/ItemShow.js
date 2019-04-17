@@ -1,15 +1,27 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View,ImageBackground,Dimensions,Image,ScrollView ,TouchableOpacity,Button} from 'react-native'
+import { Text, StyleSheet, View,ImageBackground,Dimensions,Image,ScrollView ,TouchableOpacity,Button,Platform} from 'react-native'
 import item  from '../../assets/drawable-mdpi/item.png'
 import Review from "../components/Review";
 import arrowleft from '../../assets/drawable-mdpi/arrowleft.png'
+
 export default class ItemShow extends Component {
     constructor(props){
         super(props);
+        Dimensions.addEventListener("change",()=>{
+           this.setState({
+               portrait:this.isPortrait
+           })
+        });
             this.state={
                 showText:3
             };
     }
+    isPortrait = () => {
+        const dim = Dimensions.get('screen');
+        return dim.height >= dim.width;
+    };
+
+
   render() {
     return (
         <View  style={{flex:1}}>

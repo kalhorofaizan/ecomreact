@@ -13,8 +13,9 @@ export default class Home extends Component {
     }
 
   render() {
+
     return (
-      <View  style={{backgroundColor:'#FFFFFF',flex:1}}>
+      <View  style={{backgroundColor:'#FFFFFF',flex:1}}  >
         <Searchbar  />
           <ScrollView>
               <Categories  navigation={this.props.navigation}/>
