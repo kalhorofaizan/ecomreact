@@ -22,98 +22,91 @@ import Login from "./src/pages/Login";
 import Signup from "./src/pages/Signup";
 
 
-
-const LoginStackNavigatier=createStackNavigator({
+const HomeStackNavigater=createStackNavigator({
+  Home:{
+    screen:Home,
+  },
   Login:{
     screen:Login
   },
   Signup:{
     screen:Signup
+  },
+  Showitem:{
+    screen:ItemShow
+  },
+    Writereview:{
+    screen:WriteReview
+    },
+  ItemList:{
+    screen:ItemList
   }
 },{
   headerMode:'none',
   navigationOptions:{
     header:false
-  }});
+  }
+});
 
- export default createAppContainer(LoginStackNavigatier);
+HomeStackNavigater.navigationOptions=({navigation})=>{
+  let tabBarVisible;
+  if (navigation.state.routes.length > 1) {
+    navigation.state.routes.map(route => {
+      if (route.routeName === "Showitem") {
+        tabBarVisible = false;
+      } else if (route.routeName === "Writereview"){
+        tabBarVisible = false;
+      }else if (route.routeName === "ItemList"){
+        tabBarVisible = false;
+      }else if (route.routeName === "Login"){
+        tabBarVisible = false;
+      }else if (route.routeName === "Signup"){
+        tabBarVisible = false;
+      }
+      else {
+        tabBarVisible = true;
+      }
+    });
+  }
 
-//
-// const HomeStackNavigater=createStackNavigator({
-//   Home:{
-//     screen:Home,
-//   },
-//   Showitem:{
-//     screen:ItemShow
-//   },
-//     Writereview:{
-//     screen:WriteReview
-//     },
-//   ItemList:{
-//     screen:ItemList
-//   }
-// },{
-//   headerMode:'none',
-//   navigationOptions:{
-//     header:false
-//   }
-// });
-//
-// HomeStackNavigater.navigationOptions=({navigation})=>{
-//   let tabBarVisible;
-//   if (navigation.state.routes.length > 1) {
-//     navigation.state.routes.map(route => {
-//       if (route.routeName === "Showitem") {
-//         tabBarVisible = false;
-//       } else if (route.routeName === "Writereview"){
-//         tabBarVisible = false;
-//       }else if (route.routeName === "ItemList"){
-//         tabBarVisible = false;
-//       }
-//       else {
-//         tabBarVisible = true;
-//       }
-//     });
-//   }
-//
-//   return {
-//     tabBarVisible
-//   };
-// };
-//
-//
-// const TabNavigater = createBottomTabNavigator({
-//   Home:{
-//     screen:HomeStackNavigater,
-//     navigationOptions:{
-//       tabBarIcon:({tintColor})=>(
-//           <Image source={home} style={{width:Dimensions.get('window').width*0.13 ,height:Dimensions.get('window').height*0.03}}  />
-//       )
-//     }
-//   },
-//   Cart:{
-//     screen:Cart,
-//     navigationOptions:{
-//       tabBarIcon:({tintColor})=>(
-//           <Image source={cart} style={{width:Dimensions.get('window').width*0.06 ,height:Dimensions.get('window').height*0.039}}  />
-//       )
-//     }
-//   },
-//   Setting:{
-//     screen:Setting,
-//     navigationOptions:{
-//       tabBarIcon:({tintColor})=>(
-//           <Image source={setting} style={{width:Dimensions.get('window').width*0.046 ,height:Dimensions.get('window').height*0.031}}  />
-//       )
-//     }
-//   }
-// },{
-//   tabBarOptions:{
-//     showLabel:false,
-//       style:{
-//           height:Dimensions.get('window').height*0.08
-//       }
-//   }
-// });
-//
-// export default createAppContainer(TabNavigater);
+  return {
+    tabBarVisible
+  };
+};
+
+
+const TabNavigater = createBottomTabNavigator({
+  Home:{
+    screen:HomeStackNavigater,
+    navigationOptions:{
+      tabBarIcon:({tintColor})=>(
+          <Image source={home} style={{width:Dimensions.get('window').width*0.13 ,height:Dimensions.get('window').height*0.03}}  />
+      )
+    }
+  },
+  Cart:{
+    screen:Cart,
+    navigationOptions:{
+      tabBarIcon:({tintColor})=>(
+          <Image source={cart} style={{width:Dimensions.get('window').width*0.06 ,height:Dimensions.get('window').height*0.039}}  />
+      )
+    }
+  },
+  Setting:{
+    screen:Setting,
+    navigationOptions:{
+      tabBarIcon:({tintColor})=>(
+          <Image source={setting} style={{width:Dimensions.get('window').width*0.046 ,height:Dimensions.get('window').height*0.031}}  />
+      )
+    }
+  }
+},{
+  tabBarOptions:{
+    showLabel:false,
+      style:{
+          height:Dimensions.get('window').height*0.08
+      }
+  }
+});
+
+export default createAppContainer(TabNavigater);

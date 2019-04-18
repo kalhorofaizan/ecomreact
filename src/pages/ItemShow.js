@@ -57,7 +57,7 @@ export default class ItemShow extends Component {
                     <Text>Price</Text>
                     <Text style={{fontSize:15,color:'#00C569'}} >RS 1500</Text>
                 </View>
-                <TouchableOpacity style={{marginLeft:"auto",marginRight:15,height:40,marginTop:10,width:100,borderRadius:5,backgroundColor:'#00C569',alignItems:'center',justifyContent:'center'}} onPress={()=>{}}>
+                <TouchableOpacity style={{marginLeft:"auto",marginRight:15,height:40,marginTop:10,width:100,borderRadius:5,backgroundColor:'#00C569',alignItems:'center',justifyContent:'center'}} onPress={()=>{this.props.navigation.navigate('Login')}}>
                     <Text style={{fontSize:15,color:'white'}}>Add</Text>
                 </TouchableOpacity>
             </View>
