@@ -20,11 +20,15 @@ import WriteReview from'./src/pages/WriteReview'
 import ItemList from "./src/pages/ItemList";
 import Login from "./src/pages/Login";
 import Signup from "./src/pages/Signup";
+import Checkout from "./src/pages/Checkout";
 
 
 const HomeStackNavigater=createStackNavigator({
   Home:{
     screen:Home,
+  },
+  CheckOut:{
+    screen:Checkout
   },
   Login:{
     screen:Login
@@ -61,6 +65,8 @@ HomeStackNavigater.navigationOptions=({navigation})=>{
       }else if (route.routeName === "Login"){
         tabBarVisible = false;
       }else if (route.routeName === "Signup"){
+        tabBarVisible = false;
+      }else if (route.routeName === "CheckOut"){
         tabBarVisible = false;
       }
       else {
