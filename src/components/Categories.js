@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View ,ScrollView ,Image,Dimensions} from 'react-native'
-import man from '../../assets/drawable-mdpi/Icon_MensShoe.png'
-import woman from '../../assets/drawable-mdpi/Icon_WomensShoe.png'
-import devices from '../../assets/drawable-mdpi/Icon_Devices.png'
-import gadgets from '../../assets/drawable-mdpi/Icon_Gadgets.png'
-import gaming from '../../assets/drawable-mdpi/Icon_Gaming.png'
-import CatItem from './CatItem'
+import {Thumbnail} from "native-base"
+import man from '../../assets/man.png'
+import woman from '../../assets/woman.png'
+import devices from '../../assets/device.png'
+import gadgets from '../../assets/gadget.png'
+import gaming from '../../assets/game.png'
+import CatItem from './CategItem'
 export default class Categories extends Component {
     constructor(props){
         super(props);

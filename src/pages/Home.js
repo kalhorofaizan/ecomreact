@@ -4,7 +4,7 @@ import Searchbar from "../components/Searchbar";
 import Categories from "../components/Categories";
 import BestSells from "../components/BestSells";
 import ListBox from "../components/ListBox";
-import ListItems from "../components/ListItems";
+import Carditem from "../components/Carditem";
 
 export default class Home extends Component {
     constructor(props){
@@ -21,16 +21,16 @@ export default class Home extends Component {
               <Categories  navigation={this.props.navigation}/>
               <BestSells navigation={this.props.navigation} >
                   <ListBox >
-                      <ListItems navigation={this.props.navigation}/>
-                      <ListItems  navigation={this.props.navigation}/>
+                      <Carditem navigation={this.props.navigation}/>
+                      <Carditem navigation={this.props.navigation}/>
                   </ListBox>
-                  <ListBox>
-                      <ListItems  navigation={this.props.navigation}/>
-                      <ListItems  navigation={this.props.navigation}/>
+                  <ListBox >
+                      <Carditem navigation={this.props.navigation}/>
+                      <Carditem navigation={this.props.navigation}/>
                   </ListBox>
-                  <ListBox>
-                      <ListItems  navigation={this.props.navigation}/>
-                      <ListItems  navigation={this.props.navigation}/>
+                  <ListBox >
+                      <Carditem navigation={this.props.navigation}/>
+                      <Carditem navigation={this.props.navigation}/>
                   </ListBox>
               </BestSells>
           </ScrollView>

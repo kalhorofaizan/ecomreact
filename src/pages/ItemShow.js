@@ -7,19 +7,11 @@ import arrowleft from '../../assets/drawable-mdpi/arrowleft.png'
 export default class ItemShow extends Component {
     constructor(props){
         super(props);
-        Dimensions.addEventListener("change",()=>{
-           this.setState({
-               portrait:this.isPortrait
-           })
-        });
+
             this.state={
                 showText:3
             };
     }
-    isPortrait = () => {
-        const dim = Dimensions.get('screen');
-        return dim.height >= dim.width;
-    };
 
 
   render() {

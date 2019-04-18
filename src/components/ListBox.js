@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View } from 'react-native'
-import ListItems from "./ListItems";
+
 
 export default class  extends Component {
     constructor(props){
