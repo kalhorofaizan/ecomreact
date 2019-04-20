@@ -21,6 +21,7 @@ import ItemList from "./src/pages/ItemList";
 import Login from "./src/pages/Login";
 import Signup from "./src/pages/Signup";
 import Checkout from "./src/pages/Checkout";
+import Profile from "./src/pages/Profile";
 
 
 const HomeStackNavigater=createStackNavigator({
@@ -44,13 +45,30 @@ const HomeStackNavigater=createStackNavigator({
     },
   ItemList:{
     screen:ItemList
-  }
+  },
+  Profile:{
+    screen:Profile
+  },
 },{
   headerMode:'none',
   navigationOptions:{
     header:false
   }
 });
+
+const SettingStackNavigater=createStackNavigator({
+  Setting:{
+    screen:Setting
+  },Profile:{
+    screen:Profile
+  },
+},{
+  headerMode:'none',
+  navigationOptions:{
+    header:false
+  }
+});
+
 
 HomeStackNavigater.navigationOptions=({navigation})=>{
   let tabBarVisible;
@@ -67,6 +85,28 @@ HomeStackNavigater.navigationOptions=({navigation})=>{
       }else if (route.routeName === "Signup"){
         tabBarVisible = false;
       }else if (route.routeName === "CheckOut"){
+        tabBarVisible = false;
+      }else if (route.routeName === "Profile"){
+        tabBarVisible = false;
+      }
+      else {
+        tabBarVisible = true;
+      }
+    });
+  }
+
+  return {
+    tabBarVisible
+  };
+};
+
+
+
+SettingStackNavigater.navigationOptions=({navigation})=>{
+  let tabBarVisible;
+  if (navigation.state.routes.length > 1) {
+    navigation.state.routes.map(route => {
+      if (route.routeName === "Profile") {
         tabBarVisible = false;
       }
       else {
@@ -99,7 +139,7 @@ const TabNavigater = createBottomTabNavigator({
     }
   },
   Setting:{
-    screen:Setting,
+    screen:SettingStackNavigater,
     navigationOptions:{
       tabBarIcon:({tintColor})=>(
           <Image source={setting} style={{width:Dimensions.get('window').width*0.046 ,height:Dimensions.get('window').height*0.031}}  />
