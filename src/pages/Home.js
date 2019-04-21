@@ -5,6 +5,7 @@ import Categories from "../components/Categories";
 import BestSells from "../components/BestSells";
 import ListBox from "../components/ListBox";
 import Carditem from "../components/Carditem";
+import NewSearchbar from "../components/NewSearchbar";
 
 export default class Home extends Component {
     constructor(props){
@@ -16,13 +17,14 @@ export default class Home extends Component {
 
     return (
       <View  style={{backgroundColor:'#FFFFFF',flex:1}}  >
-        <Searchbar  />
+        {/*<Searchbar  />*/}
+        <NewSearchbar/>
           <ScrollView>
               <Categories  navigation={this.props.navigation}/>
               <BestSells navigation={this.props.navigation} >
                   <ListBox >
-                      <Carditem navigation={this.props.navigation}/>
-                      <Carditem navigation={this.props.navigation}/>
+                      <Carditem  navigation={this.props.navigation}/>
+                      <Carditem  navigation={this.props.navigation}/>
                   </ListBox>
                   <ListBox >
                       <Carditem navigation={this.props.navigation}/>

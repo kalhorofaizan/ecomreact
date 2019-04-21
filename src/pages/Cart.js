@@ -16,6 +16,7 @@ export default class Cart extends Component {
             <Content style={{margin:10}}  >
                 <SwipeRow
                     rightOpenValue={-75}
+                    style={{marginTop:5}}
                     body={
                         <View style={{flexDirection:'row'}}>
                             <View>

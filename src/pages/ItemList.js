@@ -1,6 +1,22 @@
 import React, { Component } from 'react'
 import {Text, StyleSheet, View, TouchableOpacity, Image, Dimensions,ScrollView} from 'react-native'
-import {Button,ActionSheet,Container,Content,Picker,Form,Header,Left,Right,Icon,Body,Title,Label} from "native-base";
+import sort from '../../assets/sort.png'
+import {
+    Button,
+    ActionSheet,
+    Container,
+    Content,
+    Picker,
+    Form,
+    Header,
+    Left,
+    Right,
+    Icon,
+    Body,
+    Title,
+    Label,
+    Item, Input
+} from "native-base";
 import Searchbar from "../components/Searchbar";
 import ListBox from "../components/ListBox";
 import Carditem from "../components/Carditem";
@@ -21,40 +37,27 @@ export default class ItemList extends Component {
   render() {
     return (
       <Container style={{flex:1}} >
-          <Appbar.Header  style={{backgroundColor:'white'}}>
-              <Appbar.BackAction onPress={()=>{
-                  this.props.navigation.goBack()
-              }} />
-              <Appbar.Content title={'Cloth'}  />
-          </Appbar.Header>
-          <Searchbar/>
+         <Header searchBar transparent style={{elevation:1}}  >
+             <Left>
+                 <Button onPress={()=>{this.props.navigation.goBack()}} transparent>
+                     <Icon style={{color:'black'}} name={'arrow-back'}/>
+                 </Button>
+             </Left>
+                 <Item>
+                     <Icon name="ios-search" />
+                     <Input placeholder="Search" />
+                 </Item>
+                 <Button transparent>
+                     <Text>Search</Text>
+                 </Button>
+             <Right>
+                 <Button onPress={()=>{alert('ok')}} transparent>
+                     <Icon style={{color:'black'}} name={'funnel'} />
+                 </Button>
+             </Right>
+
+         </Header>
           <Content>
-              <Form>
-                  <Label style={{marginLeft:10  }}>Order by</Label>
-                  <Picker
-                      renderHeader={backAction =>
-                          <Header style={{ backgroundColor: "#f44242" }}>
-                              <Left>
-                                  <Button transparent onPress={backAction}>
-                                      <Icon name="filter" style={{ color: "#fff" }} />
-                                  </Button>
-                              </Left>
-                              <Body style={{ flex: 3 }}>
-                                  <Title style={{ color: "#fff" }}>Your Header</Title>
-                              </Body>
-                              <Right />
-                          </Header>}
-                      mode="dropdown"
-                      iosIcon={<Icon name="filter" />}
-                      selectedValue={"Key0"}
-                      onValueChange={this.onValueChange.bind(this)}
-                  >
-                      <Picker.Item label="Date" value="key0" />
-                      <Picker.Item label="price-dec" value="key2" />
-                      <Picker.Item label="price-acc" value="key1" />
-                      <Picker.Item label="Rating" value="key4" />
-                  </Picker>
-              </Form>
               <ScrollView>
                   <ListBox >
                       <Carditem navigation={this.props.navigation}/>

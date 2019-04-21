@@ -30,7 +30,7 @@ export default class Setting extends Component {
                           <Text>Edit profile</Text>
                       </Body>
                   </ListItem>
-              <ListItem icon>
+              <ListItem onPress={()=>{this.props.navigation.navigate('OrderList')}} icon>
                   <Left>
                       <Thumbnail small source={order}  />
                   </Left>

@@ -8,7 +8,7 @@ export default class Carditem extends Component {
     }
   render() {
     return (
-        <Card onPress={()=>{this.props.navigation.navigate('Showitem')}} >
+        <Card  onPress={()=>{this.props.navigation.navigate('Showitem')}} >
             <Card.Cover source={item } />
             <Card.Content>
                 <Title>Dri-FIT  Long</Title>

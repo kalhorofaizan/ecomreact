@@ -22,6 +22,7 @@ import Login from "./src/pages/Login";
 import Signup from "./src/pages/Signup";
 import Checkout from "./src/pages/Checkout";
 import Profile from "./src/pages/Profile";
+import OrderList from "./src/pages/OrderList";
 
 
 const HomeStackNavigater=createStackNavigator({
@@ -61,6 +62,9 @@ const SettingStackNavigater=createStackNavigator({
     screen:Setting
   },Profile:{
     screen:Profile
+  },
+  OrderList:{
+    screen:OrderList
   },
 },{
   headerMode:'none',
@@ -107,6 +111,8 @@ SettingStackNavigater.navigationOptions=({navigation})=>{
   if (navigation.state.routes.length > 1) {
     navigation.state.routes.map(route => {
       if (route.routeName === "Profile") {
+        tabBarVisible = false;
+      } else if (route.routeName === "OrderList"){
         tabBarVisible = false;
       }
       else {

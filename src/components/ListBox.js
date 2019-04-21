@@ -9,7 +9,7 @@ export default class  extends Component {
     }
   render() {
     return (
-      <View style={{flexDirection:'row',justifyContent:'space-around',marginBottom:10}} >
+      <View style={{flexDirection:'row',justifyContent:'space-around',marginBottom:5,marginTop:5,flex:1}} >
           {this.props.children}
       </View>
     )
