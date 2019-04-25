@@ -7,8 +7,8 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View,Image,Dimensions} from 'react-native';
-import {createAppContainer,createBottomTabNavigator,createStackNavigator } from 'react-navigation';
+import {Platform, StyleSheet, Text, View, Image, Dimensions, StatusBar} from 'react-native';
+import {createAppContainer,createBottomTabNavigator,createStackNavigator,SafeAreaView } from 'react-navigation';
 import cart from './assets/drawable-mdpi/Icon_Cart.png'
 import home from './assets/drawable-mdpi/Explore.png'
 import setting from './assets/drawable-mdpi/Icon_User.png'
@@ -23,8 +23,7 @@ import Signup from "./src/pages/Signup";
 import Checkout from "./src/pages/Checkout";
 import Profile from "./src/pages/Profile";
 import OrderList from "./src/pages/OrderList";
-
-
+console.disableYellowBox = true;
 const HomeStackNavigater=createStackNavigator({
   Home:{
     screen:Home,

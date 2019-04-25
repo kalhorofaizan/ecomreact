@@ -6,7 +6,6 @@ import BestSells from "../components/BestSells";
 import ListBox from "../components/ListBox";
 import Carditem from "../components/Carditem";
 import NewSearchbar from "../components/NewSearchbar";
-
 export default class Home extends Component {
     constructor(props){
         super(props);

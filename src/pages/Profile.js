@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View,TouchableOpacity } from 'react-native'
+import {Text, StyleSheet, View, TouchableOpacity, StatusBar} from 'react-native'
 import {Container, Content, Input, Thumbnail, Form, Item, Label, ListItem, Button, Icon, Left} from 'native-base'
 import image from '../../assets/drawable-mdpi/Avatar.png'
 export default class Profile extends Component {
     constructor(props){
         super(props);
     }
+    componentWillMount() {
+        StatusBar.setHidden(true)
+    }
   render() {
     return (
-      <Container>
-          <Content style={{padding:10}}>
+      <Container style={{flex:1}} >
+          <Content  padder>
               <Button onPress={()=>{this.props.navigation.goBack()}} transparent>
                   <Icon style={{color:'black'}} name={'arrow-back'}/>
               </Button>

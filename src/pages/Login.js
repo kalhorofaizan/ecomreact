@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View,Dimensions ,TouchableOpacity} from 'react-native'
+import {StyleSheet, View, Dimensions, TouchableOpacity, StatusBar} from 'react-native'
 import { Container, Header, Content, Item, Input, Icon ,Text,Body,Title,Form,Label,Button,Left} from 'native-base';
 import {TextInput} from 'react-native-paper'
 export default class Login extends Component {
@@ -27,7 +27,7 @@ export default class Login extends Component {
                       </Item>
                       <Item floatingLabel  success>
                           <Label color={'black'}>Password</Label>
-                          <Input style={{borderBottomColor:'#00C569'}} />
+                          <Input secureTextEntry={true} style={{borderBottomColor:'#00C569'}} />
                           <Icon name='checkmark-circle' />
                       </Item>
                       <Button style={{margin:23,backgroundColor:'#00C569'}} block  onPress={()=>{}}><Text> SignIn </Text></Button>

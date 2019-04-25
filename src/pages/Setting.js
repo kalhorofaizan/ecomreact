@@ -10,6 +10,7 @@ export default class Setting extends Component {
         super(props);
 
     }
+
   render() {
     return (
       <Container >

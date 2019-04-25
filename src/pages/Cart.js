@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Text, StyleSheet, View, Dimensions, TouchableOpacity} from 'react-native'
+import {Text, StyleSheet, View, Dimensions, TouchableOpacity, StatusBar} from 'react-native'
 import {Container,Content,List,SwipeRow,Button,Icon,ListItem,Left,Body,Thumbnail,Item,Title,Right,Footer} from 'native-base'
 import image from '../../assets/drawable-mdpi/item.png'
 
@@ -9,6 +9,9 @@ export default class Cart extends Component {
         this.state={
             item:1
         }
+    }
+    componentWillMount() {
+        StatusBar.setHidden(true)
     }
   render() {
     return (

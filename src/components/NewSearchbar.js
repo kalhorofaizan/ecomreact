@@ -8,7 +8,7 @@ export default class NewSearchbar extends Component {
     }
   render() {
     return (
-        <Header searchBar rounded transparent style={{elevation:1}} >
+        <Header searchBar rounded transparent style={{elevation:1}}  >
             <Item>
                 <Icon name="ios-search" />
                 <Input placeholder="Search" />

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {  StyleSheet, View,TouchableOpacity } from 'react-native'
+import {StyleSheet, View, TouchableOpacity, StatusBar} from 'react-native'
 import {Container,Content,Header,Left,Button,Icon,Text,Body,Segment,Radio,Label,ListItem,Right,Footer,Form,Item,Input,DatePicker,Thumbnail,Title} from 'native-base'
 import cardicon from '../../assets/cardicon.png'
 export default class Checkout extends Component {
@@ -127,7 +127,9 @@ export default class Checkout extends Component {
             </Form>
         </Content>
     };
-
+    componentWillMount() {
+        StatusBar.setHidden(true)
+    }
 
   render() {
     return (
